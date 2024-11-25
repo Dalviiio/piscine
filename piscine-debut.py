@@ -16,7 +16,9 @@ while isAlive:
             print(f"Prénom {elt[0]}, nage {elt[1]}, longueur {elt[2]}")
 
     if commande =='exit':
-        isAlive = False
+        tmp = input ("En etes vous sur ? oui/non")
+        if tmp == "o":
+            isAlive = False
         continue
 
     print (f"Commande {commande} inconnue")
