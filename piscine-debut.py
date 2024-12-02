@@ -34,3 +34,19 @@ while isAlive:
         continue
 
     print (f"Commande {commande} inconnue")
+
+fichier = open('save.csv', 'w')
+for elt in liste:
+    fichier.write(elt[0]+','+elt[1]+','+str(elt[2])+"\n")
+fichier.close()
+
+fichier = open('save.csv', 'r')
+for line in fichier:
+    line.strip()
+    if line[-1] == '\n':
+        line = line[:-1]
+    if line[0]=='#':
+        continue
+    tmp = line.split(',')
+    liste.append(tuple(tmp))
+fichier.close()
